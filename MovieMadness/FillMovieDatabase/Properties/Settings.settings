@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=winserv1.cs.uakron.edu;Initial Catalog=bmj29_db2015;User ID=bmj29;Password=w6vLfk6</Value>
     </Setting>
+    <Setting Name="tmdbApiKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">68434a5eece06ce6d46df35f57dcaeba</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

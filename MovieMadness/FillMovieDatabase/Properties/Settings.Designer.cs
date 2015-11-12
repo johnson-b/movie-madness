@@ -33,5 +33,14 @@ namespace FillMovieDatabase.Properties {
                 return ((string)(this["connectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("68434a5eece06ce6d46df35f57dcaeba")]
+        public string tmdbApiKey {
+            get {
+                return ((string)(this["tmdbApiKey"]));
+            }
+        }
     }
 }

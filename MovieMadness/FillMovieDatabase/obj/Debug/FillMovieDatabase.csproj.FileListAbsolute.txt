@@ -1,0 +1,5 @@
+C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\FillMovieDatabase.exe.config
+C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\FillMovieDatabase.exe
+C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\FillMovieDatabase.pdb
+C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\obj\Debug\FillMovieDatabase.exe
+C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\obj\Debug\FillMovieDatabase.pdb

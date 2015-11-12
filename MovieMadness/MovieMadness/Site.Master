@@ -4,7 +4,11 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
+<<<<<<< HEAD
     <title><%: Page.Title %> - Movie Madness</title>
+=======
+    <title><%: Page.Title %> Movie Madness</title>
+>>>>>>> 3ab3c12cac70d215dc03c31c53df22ca6077cc1f
     <asp:PlaceHolder runat="server">     
           <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>  
@@ -60,7 +64,11 @@
     <footer>
         <div class="content-wrapper">
             <div class="float-left">
+<<<<<<< HEAD
                 <p>&copy; <%: DateTime.Now.Year %> - Movie Madness</p>
+=======
+                <p>&copy; <%: DateTime.Now.Year %> Movie Madness</p>
+>>>>>>> 3ab3c12cac70d215dc03c31c53df22ca6077cc1f
             </div>
         </div>
     </footer>

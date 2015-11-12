@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,24 @@ namespace FillMovieDatabase
     {
         static void Main(string[] args)
         {
-            // TODO: traverse through movies and add to our db
+            try
+            {
+                SqlConnection connection = new SqlConnection(Properties.Settings.Default.connectionString);
+                connection.Open();
+
+
+
+
+
+
+
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            
             Console.Read();
         }
     }

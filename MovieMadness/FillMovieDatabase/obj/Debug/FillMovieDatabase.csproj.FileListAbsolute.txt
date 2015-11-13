@@ -4,8 +4,10 @@ C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\
 C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\obj\Debug\FillMovieDatabase.exe
 C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\obj\Debug\FillMovieDatabase.pdb
 C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\RestSharp.dll
-C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\TMDbLib.dll
 C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\RestSharp.xml
-C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\TMDbLib.pdb
 C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\obj\Debug\FillMovieDatabase.csprojResolveAssemblyReference.cache
 C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\RottenTomatoes.Api.dll
+C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\Hasseware.Net.TMDb.dll
+C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\Newtonsoft.Json.dll
+C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\Hasseware.Net.TMDb.xml
+C:\Users\bmj29\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\Newtonsoft.Json.xml

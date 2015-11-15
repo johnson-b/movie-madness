@@ -15,36 +15,33 @@ CREATE TABLE movie
 
 CREATE TABLE movieGenre
 (
-	genreId INT FOREIGN KEY REFERENCES genre(id),
-	movieId INT FOREIGN KEY REFERENCES movie(id)	
+	genreId INT FOREIGN KEY REFERENCES genre(id) ON DELETE CASCADE,
+	movieId INT FOREIGN KEY REFERENCES movie(id) ON DELETE CASCADE	
 );
 
 CREATE TABLE director
 (
 	id INT PRIMARY KEY IDENTITY(1,1),
-	first_name VARCHAR(100),
-	last_name VARCHAR(100),
-	UNIQUE(first_name, last_name)
+	name VARCHAR(300),
+	UNIQUE(name)
 );
 
 CREATE TABLE directMovie
 (
-	directorId INT FOREIGN KEY REFERENCES director(id),
-	movieId INT FOREIGN KEY REFERENCES movie(id)
+	directorId INT FOREIGN KEY REFERENCES director(id) ON DELETE CASCADE,
+	movieId INT FOREIGN KEY REFERENCES movie(id) ON DELETE CASCADE
 );
 
 CREATE TABLE actor
 (
 	id INT PRIMARY KEY IDENTITY(1,1),
-	first_name VARCHAR(100),
-	last_name VARCHAR(100),
-	gender VARCHAR(1),
-	UNIQUE(first_name, last_name)
+	name VARCHAR(300),
+	UNIQUE(name)
 );
 
 CREATE TABLE actorRole
 (
-	actorId INT FOREIGN KEY REFERENCES actor(id),
-	movieId INT FOREIGN KEY REFERENCES movie(id),
-	actor_role VARCHAR(200)
+	actorId INT FOREIGN KEY REFERENCES actor(id) ON DELETE CASCADE,
+	movieId INT FOREIGN KEY REFERENCES movie(id) ON DELETE CASCADE,
+	actor_role VARCHAR(300)
 );

@@ -4,12 +4,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using TMDbLib.Client;
-//using TMDbLib.Objects.General;
-//using TMDbLib.Objects.Movies;
 using System.Net.TMDb;
 using System.Threading;
 using System.IO;
+using MovieDbEntities;
 
 namespace FillMovieDatabase
 {
@@ -28,44 +26,82 @@ namespace FillMovieDatabase
                 List<Movie> movies = moviesTask.Result;
                 foreach (Movie movie in movies)
                 {
-                    SqlCommand command = connection.CreateCommand();
+                    string title = movie.Title;
+                    int releaseYear = movie.ReleaseDate.Value.Year;
+                    int duration = movie.Runtime.Value;
+                    string rating = (from r in movie.Releases.Results
+                                     where r.CountryCode.Contains("US")
+                                     select r).FirstOrDefault().Certification;
+                    DbMovie dbMovie = new DbMovie(
+                        movie.Title,
+                        movie.ReleaseDate.Value.Year,
+                        movie.Runtime.Value,
+                        (from r in movie.Releases.Results
+                         where r.CountryCode.Contains("US")
+                         select r).FirstOrDefault().Certification);
 
-                    /* movie table 
-                     * title
-                     * release year(int)
-                     * duration(int)
-                     * rating(R, PG etc.)
-                     */
+                    SqlCommand cmd = new SqlCommand(dbMovie.Insert(), connection);
+                    int movieId = (int)cmd.ExecuteScalar();
+                    Console.WriteLine(string.Format("Movie ({0}) inserted...", movie.Title));
 
-                    /* director table 
-                     * first name
-                     * last name
-                     */
+                    var directorQuery = from d in movie.Credits.Crew
+                                    where d.Department.Contains("Directing")
+                                    where d.Job.Contains("Director")
+                                    select d;
+                    DbDirector director = new DbDirector(directorQuery.FirstOrDefault().Name);
+                    cmd = new SqlCommand(director.Insert(), connection);
+                    int directorId = (int)cmd.ExecuteScalar();
+                    Console.WriteLine(string.Format("Director ({0}) inserted...", director.Name));
 
-                    /* directMovie table
-                     * director id
-                     * movie id
-                     */
+                    DbDirectMovie directMovie = new DbDirectMovie(directorId, movieId);
+                    cmd = new SqlCommand(directMovie.Insert(), connection);
+                    cmd.ExecuteScalar();
+                    Console.WriteLine(string.Format("Movie ({0}) linked with Director ({1})...", dbMovie.Title, director.Name));
 
-                    /* actor table 
-                     * first name
-                     * last name 
-                     */
+                    foreach(MediaCast actor in movie.Credits.Cast)
+                    {
+                        string name = actor.Name;
+                        if(name.Contains("'"))
+                        {
+                            name = name.Replace("'", "''");
+                        }
+                        DbActor dbActor = new DbActor(name);
+                        cmd = new SqlCommand(dbActor.Insert(), connection);
+                        int actorId;
+                        try
+                        {
+                            actorId = (int)cmd.ExecuteScalar();
+                            Console.WriteLine(string.Format("Actor ({0}) inserted...", dbActor.Name));
+                        }
+                        catch (Exception e)
+                        {
+                            cmd = new SqlCommand(dbActor.Update(), connection);
+                            actorId = (int)cmd.ExecuteScalar();
+                        }
 
-                    /* actorRole table
-                     * actor id
-                     * movie id
-                     * actor_role (character name)
-                     */
+                        string roleName = actor.Character;
+                        if(roleName.Contains("'"))
+                        {
+                            roleName = roleName.Replace("'", "''");
+                        }
+                        DbActorRole actorRole = new DbActorRole(actorId, movieId, roleName);
+                        cmd = new SqlCommand(actorRole.Insert(), connection);
+                        cmd.ExecuteScalar();
+                        Console.WriteLine(string.Format("Actor ({0}) with Role ({1}) linked with Movie ({2})...", dbActor.Name, actorRole.ActorRole, dbMovie.Title));
+                    }
 
-                    /* genre table 
-                     * genre 
-                     */
+                    foreach(Genre genre in movie.Genres)
+                    {
+                        DbGenre dbGenre = new DbGenre(genre.Name);
+                        cmd = new SqlCommand(dbGenre.Insert(), connection);
+                        int genreId = (int)cmd.ExecuteScalar();
+                        Console.WriteLine(string.Format("Genre ({0}) inserted...", dbGenre.Genre));
 
-                    /* movieGenre table 
-                     * genre id 
-                     * movie id
-                     */
+                        DbMovieGenre movieGenre = new DbMovieGenre(genreId, movieId);
+                        cmd = new SqlCommand(movieGenre.Insert(), connection);
+                        cmd.ExecuteScalar();
+                        Console.WriteLine(string.Format("Genre ({0}) linked with Movie ({1})...", dbGenre.Genre, dbMovie.Title));
+                    }
                 }
 
                 connection.Close();
@@ -74,7 +110,7 @@ namespace FillMovieDatabase
             {
                 Console.WriteLine(e.ToString());
             }
-
+            Console.WriteLine("Press <Enter> to continue...");
             Console.Read();
         }
     }

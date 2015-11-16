@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +22,17 @@ namespace MovieDbEntities
             Duration = duration;
             Rating = rating;
         }
-        public override string Insert()
+        public override SqlCommand Insert(SqlConnection conn)
         {
-            return string.Format("INSERT INTO {0} OUTPUT INSERTED.ID VALUES ('{1}', {2}, {3}, '{4}');", TableName, Title, ReleaseYear, Duration, Rating);
+            SqlCommand cmd = new SqlCommand("insertMovie", conn)
+            {
+                CommandType = System.Data.CommandType.StoredProcedure
+            };
+            cmd.Parameters.AddWithValue("@Title", Title);
+            cmd.Parameters.AddWithValue("@ReleaseYear", ReleaseYear);
+            cmd.Parameters.AddWithValue("@Duration", Duration);
+            cmd.Parameters.AddWithValue("@Rating", Rating);
+            return cmd;
         }
     }
 }

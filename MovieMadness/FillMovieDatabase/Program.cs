@@ -32,6 +32,7 @@ namespace FillMovieDatabase
                     string rating = (from r in movie.Releases.Results
                                      where r.CountryCode.Contains("US")
                                      select r).FirstOrDefault().Certification;
+                    
                     DbMovie dbMovie = new DbMovie(
                         movie.Title,
                         movie.ReleaseDate.Value.Year,
@@ -45,9 +46,9 @@ namespace FillMovieDatabase
                     Console.WriteLine(string.Format("Movie ({0}) inserted...", movie.Title));
 
                     var directorQuery = from d in movie.Credits.Crew
-                                    where d.Department.Contains("Directing")
-                                    where d.Job.Contains("Director")
-                                    select d;
+                                        where d.Department.Contains("Directing")
+                                        where d.Job.Contains("Director")
+                                        select d;
                     DbDirector director = new DbDirector(directorQuery.FirstOrDefault().Name);
                     cmd = new SqlCommand(director.Insert(), connection);
                     int directorId = (int)cmd.ExecuteScalar();
@@ -58,29 +59,20 @@ namespace FillMovieDatabase
                     cmd.ExecuteScalar();
                     Console.WriteLine(string.Format("Movie ({0}) linked with Director ({1})...", dbMovie.Title, director.Name));
 
-                    foreach(MediaCast actor in movie.Credits.Cast)
+                    foreach (MediaCast actor in movie.Credits.Cast)
                     {
                         string name = actor.Name;
-                        if(name.Contains("'"))
+                        if (name.Contains("'"))
                         {
                             name = name.Replace("'", "''");
                         }
                         DbActor dbActor = new DbActor(name);
                         cmd = new SqlCommand(dbActor.Insert(), connection);
-                        int actorId;
-                        try
-                        {
-                            actorId = (int)cmd.ExecuteScalar();
-                            Console.WriteLine(string.Format("Actor ({0}) inserted...", dbActor.Name));
-                        }
-                        catch (Exception e)
-                        {
-                            cmd = new SqlCommand(dbActor.Update(), connection);
-                            actorId = (int)cmd.ExecuteScalar();
-                        }
+                        int actorId = (int)cmd.ExecuteScalar();
+                        Console.WriteLine(string.Format("Actor ({0}) inserted...", dbActor.Name));
 
                         string roleName = actor.Character;
-                        if(roleName.Contains("'"))
+                        if (roleName.Contains("'"))
                         {
                             roleName = roleName.Replace("'", "''");
                         }
@@ -90,7 +82,7 @@ namespace FillMovieDatabase
                         Console.WriteLine(string.Format("Actor ({0}) with Role ({1}) linked with Movie ({2})...", dbActor.Name, actorRole.ActorRole, dbMovie.Title));
                     }
 
-                    foreach(Genre genre in movie.Genres)
+                    foreach (Genre genre in movie.Genres)
                     {
                         DbGenre dbGenre = new DbGenre(genre.Name);
                         cmd = new SqlCommand(dbGenre.Insert(), connection);

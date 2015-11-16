@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +16,14 @@ namespace MovieDbEntities
         {
             Name = name;
         }
-        public override string Insert()
+        public override SqlCommand Insert(SqlConnection conn)
         {
-            return string.Format("INSERT INTO {0} OUTPUT INSERTED.ID VALUES ('{1}');", TableName, Name);
-        }
-
-        public string Update()
-        {
-            return string.Format("UPDATE {0} SET name='{1}' OUTPUT INSERTED.ID WHERE name='{1}';", TableName, Name);
+            SqlCommand cmd = new SqlCommand("insertActor", conn)
+            {
+                CommandType = System.Data.CommandType.StoredProcedure
+            };
+            cmd.Parameters.AddWithValue("@Name", Name);
+            return cmd;
         }
     }
 }

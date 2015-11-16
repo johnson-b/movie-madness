@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +17,15 @@ namespace MovieDbEntities
             DirectorId = directorId;
             MovieId = movieId;
         }
-        public override string Insert()
+        public override SqlCommand Insert(SqlConnection conn)
         {
-            return string.Format("INSERT INTO {0} VALUES ({1}, {2});", TableName, DirectorId, MovieId);
+            SqlCommand cmd = new SqlCommand("insertDirectMovie", conn)
+            {
+                CommandType = System.Data.CommandType.StoredProcedure
+            };
+            cmd.Parameters.AddWithValue("@MovieId", MovieId);
+            cmd.Parameters.AddWithValue("@DirectorId", DirectorId);
+            return cmd;
         }
     }
 }

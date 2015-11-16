@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,16 @@ namespace MovieDbEntities
             MovieId = movieId;
             ActorRole = actorRole;
         }                                      
-        public override string Insert()
+        public override SqlCommand Insert(SqlConnection conn)
         {
-            return string.Format("INSERT INTO {0} VALUES ({1}, {2}, '{3}');", TableName, ActorId, MovieId, ActorRole);
+            SqlCommand cmd = new SqlCommand("insertActorRole", conn)
+            {
+                CommandType = System.Data.CommandType.StoredProcedure
+            };
+            cmd.Parameters.AddWithValue("@ActorId", ActorId);
+            cmd.Parameters.AddWithValue("@MovieId", MovieId);
+            cmd.Parameters.AddWithValue("@ActorRole", ActorRole);
+            return cmd;
         }
     }
 }

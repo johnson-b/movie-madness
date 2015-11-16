@@ -25,14 +25,7 @@ namespace FillMovieDatabase
                 Task.WaitAll(moviesTask);
                 List<Movie> movies = moviesTask.Result;
                 foreach (Movie movie in movies)
-                {
-                    string title = movie.Title;
-                    int releaseYear = movie.ReleaseDate.Value.Year;
-                    int duration = movie.Runtime.Value;
-                    string rating = (from r in movie.Releases.Results
-                                     where r.CountryCode.Contains("US")
-                                     select r).FirstOrDefault().Certification;
-                    
+                {                    
                     DbMovie dbMovie = new DbMovie(
                         movie.Title,
                         movie.ReleaseDate.Value.Year,
@@ -40,9 +33,7 @@ namespace FillMovieDatabase
                         (from r in movie.Releases.Results
                          where r.CountryCode.Contains("US")
                          select r).FirstOrDefault().Certification);
-
-                    SqlCommand cmd = new SqlCommand(dbMovie.Insert(), connection);
-                    int movieId = (int)cmd.ExecuteScalar();
+                    int movieId = (int)dbMovie.Insert(connection).ExecuteScalar();
                     Console.WriteLine(string.Format("Movie ({0}) inserted...", movie.Title));
 
                     var directorQuery = from d in movie.Credits.Crew
@@ -50,13 +41,11 @@ namespace FillMovieDatabase
                                         where d.Job.Contains("Director")
                                         select d;
                     DbDirector director = new DbDirector(directorQuery.FirstOrDefault().Name);
-                    cmd = new SqlCommand(director.Insert(), connection);
-                    int directorId = (int)cmd.ExecuteScalar();
+                    int directorId = (int)director.Insert(connection).ExecuteScalar();
                     Console.WriteLine(string.Format("Director ({0}) inserted...", director.Name));
 
                     DbDirectMovie directMovie = new DbDirectMovie(directorId, movieId);
-                    cmd = new SqlCommand(directMovie.Insert(), connection);
-                    cmd.ExecuteScalar();
+                    directMovie.Insert(connection).ExecuteScalar();
                     Console.WriteLine(string.Format("Movie ({0}) linked with Director ({1})...", dbMovie.Title, director.Name));
 
                     foreach (MediaCast actor in movie.Credits.Cast)
@@ -67,8 +56,7 @@ namespace FillMovieDatabase
                             name = name.Replace("'", "''");
                         }
                         DbActor dbActor = new DbActor(name);
-                        cmd = new SqlCommand(dbActor.Insert(), connection);
-                        int actorId = (int)cmd.ExecuteScalar();
+                        int actorId = (int)dbActor.Insert(connection).ExecuteScalar();
                         Console.WriteLine(string.Format("Actor ({0}) inserted...", dbActor.Name));
 
                         string roleName = actor.Character;
@@ -77,21 +65,18 @@ namespace FillMovieDatabase
                             roleName = roleName.Replace("'", "''");
                         }
                         DbActorRole actorRole = new DbActorRole(actorId, movieId, roleName);
-                        cmd = new SqlCommand(actorRole.Insert(), connection);
-                        cmd.ExecuteScalar();
+                        actorRole.Insert(connection).ExecuteScalar();
                         Console.WriteLine(string.Format("Actor ({0}) with Role ({1}) linked with Movie ({2})...", dbActor.Name, actorRole.ActorRole, dbMovie.Title));
                     }
 
                     foreach (Genre genre in movie.Genres)
                     {
                         DbGenre dbGenre = new DbGenre(genre.Name);
-                        cmd = new SqlCommand(dbGenre.Insert(), connection);
-                        int genreId = (int)cmd.ExecuteScalar();
+                        int genreId = (int)dbGenre.Insert(connection).ExecuteScalar();
                         Console.WriteLine(string.Format("Genre ({0}) inserted...", dbGenre.Genre));
 
                         DbMovieGenre movieGenre = new DbMovieGenre(genreId, movieId);
-                        cmd = new SqlCommand(movieGenre.Insert(), connection);
-                        cmd.ExecuteScalar();
+                        movieGenre.Insert(connection).ExecuteScalar();
                         Console.WriteLine(string.Format("Genre ({0}) linked with Movie ({1})...", dbGenre.Genre, dbMovie.Title));
                     }
                 }

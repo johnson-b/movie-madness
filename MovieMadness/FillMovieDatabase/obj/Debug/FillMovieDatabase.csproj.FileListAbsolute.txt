@@ -41,3 +41,18 @@ C:\Users\bmj29\Documents\Visual Studio 2012\Projects\movie-madness\MovieMadness\
 C:\Users\bmj29\Documents\Visual Studio 2012\Projects\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\Newtonsoft.Json.xml
 C:\Users\bmj29\Documents\Visual Studio 2012\Projects\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\RestSharp.xml
 C:\Users\bmj29\Documents\Visual Studio 2012\Projects\movie-madness\MovieMadness\FillMovieDatabase\obj\Debug\FillMovieDatabase.csprojResolveAssemblyReference.cache
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\FillMovieDatabase.exe.config
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\obj\Debug\FillMovieDatabase.exe
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\obj\Debug\FillMovieDatabase.pdb
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\FillMovieDatabase.exe
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\FillMovieDatabase.pdb
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\Hasseware.Net.TMDb.dll
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\MovieDbEntities.dll
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\RestSharp.dll
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\RottenTomatoes.Api.dll
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\MovieDbEntities.pdb
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\Hasseware.Net.TMDb.xml
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\RestSharp.xml
+C:\Users\ane17\Documents\movie-madness\MovieMadness\FillMovieDatabase\obj\Debug\FillMovieDatabase.csprojResolveAssemblyReference.cache

@@ -3,3 +3,8 @@ C:\Users\bmj29\Documents\Visual Studio 2012\Projects\movie-madness\MovieMadness\
 C:\Users\bmj29\Documents\Visual Studio 2012\Projects\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.csprojResolveAssemblyReference.cache
 C:\Users\bmj29\Documents\Visual Studio 2012\Projects\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.dll
 C:\Users\bmj29\Documents\Visual Studio 2012\Projects\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.pdb
+C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieDbEntities\bin\Debug\MovieDbEntities.dll
+C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieDbEntities\bin\Debug\MovieDbEntities.pdb
+C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.csprojResolveAssemblyReference.cache
+C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.dll
+C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.pdb

@@ -37,4 +37,5 @@
         </li>
     </ol>--%>
 <%--<asp:SqlDataSource ID="MovieDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:bmj29_db %>" ProviderName="<%$ ConnectionStrings:bmj29_db.ProviderName %>" SelectCommand="SELECT [model], [speed], [ram], [hd_size], [screen_size], [price] FROM [Laptop]"></asp:SqlDataSource>--%>
+    <asp:Button ID="Button1" runat="server" onclick="GetAllMovies" Text="Button" />
 </asp:Content>

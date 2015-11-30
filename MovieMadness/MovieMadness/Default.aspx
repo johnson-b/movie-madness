@@ -38,11 +38,11 @@
                             <%# Eval("rating") %>
                         </td>
                         <td class="pointer text-center">
-                            <asp:Button runat="server" CssClass="btn btn-default glyphicon glyphicon-pencil" Text="Delete" OnClick="DeleteMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px" />
+                            <asp:Button runat="server" CssClass="btn btn-danger glyphicon glyphicon-pencil" Text="Delete" OnClick="DeleteMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px" />
                             <%--<div class="glyphicon glyphicon-trash" style="color: red"/>--%>
                         </td>
                         <td class="pointer text-center">
-                            <asp:Button runat="server" CssClass="btn btn-default glyphicon glyphicon-pencil" Text="Edit" OnClick="EditMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px" />
+                            <asp:Button runat="server" CssClass="btn btn-primary glyphicon glyphicon-pencil" Text="Edit" OnClick="EditMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px" />
                             <%--<div class="glyphicon glyphicon-pencil" style="color: cornflowerblue" />--%>
                         </td>
                     </tr>

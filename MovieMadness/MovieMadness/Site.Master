@@ -16,8 +16,7 @@
     <%--<asp:ContentPlaceHolder runat="server" ID="HeadContent" />--%>
 </head>
 <body class="container">
-    <form runat="server">
-        <header>
+    <header>
             <div class="jumbotron">
                 <h1 class="text-center">
                     Movie Madness
@@ -52,6 +51,5 @@
                 </div>
             </div>
         </footer>
-    </form>
 </body>
 </html>

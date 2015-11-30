@@ -93,3 +93,36 @@ C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\M
 C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.csprojResolveAssemblyReference.cache
 C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.dll
 C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.pdb
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\MovieMadness.dll.config
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\MovieMadness.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\MovieMadness.pdb
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\Antlr3.Runtime.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.Core.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\EntityFramework.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\MovieDbEntities.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\System.Web.Optimization.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\System.Web.Providers.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\WebGrease.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\MovieDbEntities.pdb
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\EntityFramework.xml
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.Core.xml
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.csprojResolveAssemblyReference.cache
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.dll
+C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.pdb

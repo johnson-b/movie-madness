@@ -1,4 +1,8 @@
-﻿.pointer {
+﻿body {
+    padding-top: 65px;
+}
+
+.pointer {
     cursor: pointer;
 }
 

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -41,6 +42,11 @@ namespace MovieMadness
             //Label title = movie.FindControl("title") as Label;
             //Response.Redirect(string.Format("Edit.aspx?movie={0}", title.Text));
             Response.Redirect("Edit.aspx?movie=Spectre");
+        }
+
+        protected void SearchMovie(object sender, EventArgs e)
+        {
+            Debug.WriteLine(TxtSearch.Text);
         }
     }
 }

@@ -4,7 +4,7 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <span class="navbar-brand">Movie Madness</span>
+                <a class="navbar-brand" href="Default.aspx">Movie Madness</a>
             </div>
         </div>
     </nav>

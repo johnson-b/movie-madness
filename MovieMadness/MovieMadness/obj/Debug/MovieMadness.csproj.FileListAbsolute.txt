@@ -60,3 +60,36 @@ C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieMadness\obj\Debug\Movie
 C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.pdb
 C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieMadness\bin\MovieDbEntities.dll
 C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieMadness\bin\MovieDbEntities.pdb
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\MovieMadness.dll.config
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\MovieMadness.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\MovieMadness.pdb
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\Antlr3.Runtime.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.Core.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\EntityFramework.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\MovieDbEntities.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\System.Web.Optimization.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\System.Web.Providers.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\WebGrease.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\MovieDbEntities.pdb
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\EntityFramework.xml
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.Core.xml
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.csprojResolveAssemblyReference.cache
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.pdb

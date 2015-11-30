@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
@@ -37,22 +38,44 @@ namespace MovieDbEntities
             return cmd;
         }
 
-        public static List<DbMovie> GetAllMovies(SqlConnection conn)
+        public static DataSet GetAllMovies(SqlConnection conn)
         {
-            List<DbMovie> movies = new List<DbMovie>();
-            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM {0}", TableName), conn);
-            var m = cmd.ExecuteReader();
-            while (m.NextResult())
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataSet data = new DataSet();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = string.Format("SELECT * FROM {0}", TableName);
+            adapter.SelectCommand = cmd;                 
+            conn.Open();
+            adapter.Fill(data);
+            conn.Close();
+            return data;
+
+        }
+
+        public static DbMovie GetMovie(SqlConnection conn, string title)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM {0} WHERE title='{1}'", TableName, title), conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            DbMovie movie = new DbMovie();
+            while (reader.Read())
             {
-                DbMovie movie = new DbMovie();
-                movie.Title = m.GetString(1) as string;
-                movie.ReleaseYear = m.GetInt16(2);
-                movies.Add(movie);
+                movie.Title = reader.GetString(1) as string;
+                movie.ReleaseYear = reader.GetInt32(2);
+                movie.Duration = reader.GetInt32(3);
+                movie.Rating = reader.GetString(4) as string;
             }
+            conn.Close();
+            return movie;
+        }
 
-            Trace.WriteLine("BREAK");
-            return movies;
-
+        public static void Delete(SqlConnection conn, string title)
+        {
+            conn.Open();
+            string delete = string.Format("DELETE FROM {0} WHERE title='{1}'", TableName, title);
+            SqlCommand cmd = new SqlCommand(delete, conn);
+            cmd.ExecuteScalar();
+            conn.Close();
         }
     }
 }

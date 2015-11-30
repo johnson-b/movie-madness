@@ -1,0 +1,7 @@
+﻿.pointer {
+    cursor: pointer;
+}
+
+.table-item-hover:hover {
+    background: #e4e4e4
+}

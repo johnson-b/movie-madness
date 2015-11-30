@@ -8,3 +8,7 @@ C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieDbEntities\bin\Debug\Mo
 C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.csprojResolveAssemblyReference.cache
 C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.dll
 C:\Users\ane17\Documents\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.pdb
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieDbEntities\bin\Debug\MovieDbEntities.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieDbEntities\bin\Debug\MovieDbEntities.pdb
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.pdb

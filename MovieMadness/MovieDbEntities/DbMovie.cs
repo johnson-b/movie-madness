@@ -38,13 +38,23 @@ namespace MovieDbEntities
             return cmd;
         }
 
+        public static void UpdateMovie(SqlConnection conn, DbMovie movie)
+        {
+            conn.Open();
+            string update = string.Format("UPDATE {0} SET title='{1}', release_year={2}, duration={3}, rating='{4}' WHERE id={5}",
+                TableName, movie.Title, movie.ReleaseYear, movie.Duration, movie.Rating, movie.Id);
+            SqlCommand cmd = new SqlCommand(update, conn);
+            cmd.ExecuteScalar();
+            conn.Close();
+        }
+
         public static DataSet GetAllMovies(SqlConnection conn)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataSet data = new DataSet();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = string.Format("SELECT * FROM {0}", TableName);
-            adapter.SelectCommand = cmd;                 
+            adapter.SelectCommand = cmd;
             conn.Open();
             adapter.Fill(data);
             conn.Close();
@@ -60,6 +70,7 @@ namespace MovieDbEntities
             DbMovie movie = new DbMovie();
             while (reader.Read())
             {
+                movie.Id = reader.GetInt32(0);
                 movie.Title = reader.GetString(1) as string;
                 movie.ReleaseYear = reader.GetInt32(2);
                 movie.Duration = reader.GetInt32(3);
@@ -68,6 +79,20 @@ namespace MovieDbEntities
             conn.Close();
             return movie;
         }
+
+        public static DataSet SearchMovieTitles(SqlConnection conn, string txt)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataSet data = new DataSet();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = string.Format("SELECT * FROM {0} WHERE title LIKE '%{1}%'", TableName, txt);
+            adapter.SelectCommand = cmd;
+            conn.Open();
+            adapter.Fill(data);
+            conn.Close();
+            return data;
+        }
+
 
         public static void Delete(SqlConnection conn, string title)
         {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Edit" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="MovieMadness.Edit" %>
+﻿<%@ Page Title="Add" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Add.aspx.cs" Inherits="MovieMadness.Add" %>
 
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -27,6 +27,6 @@
             <asp:Label runat="server" for="Rating" CssClass="control-label"><strong>Rating</strong></asp:Label>
             <asp:TextBox runat="server" ID="Rating" CssClass="form-control" MaxLength="5" />
         </div>
-        <asp:Button runat="server" ID="BtnUpdate" Text="Update" CssClass="btn btn-primary" OnClick="UpdateMovie" />
+        <asp:Button runat="server" ID="BtnSubmit" Text="Submit" CssClass="btn btn-primary" OnClick="InsertMovie" />
     </div>
 </asp:Content>

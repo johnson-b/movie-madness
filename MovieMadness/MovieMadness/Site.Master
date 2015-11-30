@@ -10,20 +10,22 @@
     <script src="Scripts/jquery-1.11.3.js"></script>
 </head>
 <body class="container">
-    <header>
-        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-    </header>
-    <div id="body">
-        <section class="content-wrapper main-content clear-fix">
-            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-        </section>
-    </div>
-    <footer>
-        <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container">
-                <p>&copy; <%: DateTime.Now.Year %> - Movie Madness</p>
-            </div>
-        </nav>
-    </footer>
+    <form runat="server">
+        <header>
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        </header>
+        <div id="body">
+            <section class="content-wrapper main-content clear-fix">
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+            </section>
+        </div>
+        <footer>
+            <nav class="navbar navbar-default navbar-fixed-bottom">
+                <div class="container">
+                    <p>&copy; <%: DateTime.Now.Year %> - Movie Madness</p>
+                </div>
+            </nav>
+        </footer>
+    </form>
 </body>
 </html>

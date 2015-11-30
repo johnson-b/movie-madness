@@ -17,8 +17,8 @@ namespace MovieMadness
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["bmj29_db"].ConnectionString);
-            //GetAllMovies();
+            Connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["bmj29_db"].ConnectionString);
+            GetAllMovies();
         }
 
         protected void GetAllMovies()
@@ -38,15 +38,21 @@ namespace MovieMadness
 
         protected void EditMovie(object sender, EventArgs e)
         {
-            //RepeaterItem movie = (sender as Button).NamingContainer as RepeaterItem;
-            //Label title = movie.FindControl("title") as Label;
-            //Response.Redirect(string.Format("Edit.aspx?movie={0}", title.Text));
-            Response.Redirect("Edit.aspx?movie=Spectre");
+            RepeaterItem movie = (sender as Button).NamingContainer as RepeaterItem;
+            Label title = movie.FindControl("title") as Label;
+            Response.Redirect(string.Format("Edit.aspx?movie={0}", title.Text));
         }
 
         protected void SearchMovie(object sender, EventArgs e)
         {
-            Debug.WriteLine(TxtSearch.Text);
+            DataSet data = DbMovie.SearchMovieTitles(Connection, TxtSearch.Text);
+            Movies.DataSource = data;
+            Movies.DataBind();
+        }
+
+        protected void InsertMovie(object sender, EventArgs e)
+        {
+            Response.Redirect("Add.aspx");
         }
     }
 }

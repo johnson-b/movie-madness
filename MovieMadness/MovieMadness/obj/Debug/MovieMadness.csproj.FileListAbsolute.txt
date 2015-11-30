@@ -126,3 +126,5 @@ C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\
 C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.csprojResolveAssemblyReference.cache
 C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.dll
 C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.pdb
+C:\Users\bmj29\Documents\movie-madness\MovieMadness\MovieMadness\bin\MovieDbEntities.dll
+C:\Users\bmj29\Documents\movie-madness\MovieMadness\MovieMadness\bin\MovieDbEntities.pdb

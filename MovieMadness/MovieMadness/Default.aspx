@@ -6,12 +6,15 @@
             <div class="navbar-header">
                 <span class="navbar-brand">Movie Madness</span>
             </div>
-            <form runat="server" class="navbar-form navbar-right" role="search">
+            <div class="navbar-form navbar-right" role="link">
+                <asp:Button ID="BtnAdd" runat="server" CssClass="btn btn-primary" Text="Add Movie" OnClick="InsertMovie" />
+            </div>
+            <div class="navbar-form navbar-right" role="search">
                 <div class="form-group">
-                    <asp:TextBox ID="TxtSearch" runat="server" CssClass="form-control" placeholder="Search" AutoPostBack="true" OnTextChanged="SearchMovie"/>
+                    <asp:TextBox ID="TxtSearch" runat="server" CssClass="form-control" placeholder="Search" AutoPostBack="true" OnTextChanged="SearchMovie" />
                 </div>
                 <asp:Button ID="BtnSearch" runat="server" CssClass="btn btn-default" Text="Search" OnClick="SearchMovie" />
-            </form>
+            </div>
         </div>
     </nav>
 </asp:Content>
@@ -52,11 +55,9 @@
                         </td>
                         <td class="pointer text-center">
                             <asp:Button runat="server" CssClass="btn btn-danger glyphicon glyphicon-pencil" Text="Delete" OnClick="DeleteMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px" />
-                            <%--<div class="glyphicon glyphicon-trash" style="color: red"/>--%>
                         </td>
                         <td class="pointer text-center">
                             <asp:Button runat="server" CssClass="btn btn-primary glyphicon glyphicon-pencil" Text="Edit" OnClick="EditMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px" />
-                            <%--<div class="glyphicon glyphicon-pencil" style="color: cornflowerblue" />--%>
                         </td>
                     </tr>
                 </ItemTemplate>

@@ -10,7 +10,7 @@
 namespace MovieMadness {
     
     
-    public partial class Edit {
+    public partial class Add {
         
         /// <summary>
         /// MovieTitle control.
@@ -49,12 +49,12 @@ namespace MovieMadness {
         protected global::System.Web.UI.WebControls.TextBox Rating;
         
         /// <summary>
-        /// BtnUpdate control.
+        /// BtnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnUpdate;
+        protected global::System.Web.UI.WebControls.Button BtnSubmit;
     }
 }

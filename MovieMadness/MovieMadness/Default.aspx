@@ -25,16 +25,16 @@
                 <HeaderTemplate>
                     <thead>
                         <tr>
-                            <td><strong>Title</strong>
+                            <td class="col-md-5"><strong>Title</strong>
                             </td>
-                            <td class="text-center"><strong>Release Date</strong>
+                            <td class="text-center col-md-2"><strong>Release Date</strong>
                             </td>
-                            <td class="text-center"><strong>Duration</strong>
+                            <td class="text-center col-md-2"><strong>Duration</strong>
                             </td>
-                            <td class="text-center"><strong>Rating</strong>
+                            <td class="text-center col-md-2"><strong>Rating</strong>
                             </td>
-                            <td></td>
-                            <td></td>
+                            <td class="col-md-.5"></td>
+                            <td class="col-md-.5"></td>
                         </tr>
                     </thead>
                 </HeaderTemplate>
@@ -54,10 +54,14 @@
                             <%# Eval("rating") %>
                         </td>
                         <td class="pointer text-center">
-                            <asp:Button runat="server" CssClass="btn btn-danger glyphicon glyphicon-pencil" Text="Delete" OnClick="DeleteMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px" />
+                            <asp:LinkButton runat="server" CssClass="btn btn-danger" OnClick="DeleteMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px">
+                                <span aria-hidden="true" class="fa fa-trash-o fa-lg"></span>
+                            </asp:LinkButton>
                         </td>
                         <td class="pointer text-center">
-                            <asp:Button runat="server" CssClass="btn btn-primary glyphicon glyphicon-pencil" Text="Edit" OnClick="EditMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px" />
+                            <asp:LinkButton runat="server" CssClass="btn btn-primary" OnClick="EditMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px" >
+                                <span aria-hidden="true" class="fa fa-pencil-square-o fa-lg"></span>
+                            </asp:LinkButton>
                         </td>
                     </tr>
                 </ItemTemplate>

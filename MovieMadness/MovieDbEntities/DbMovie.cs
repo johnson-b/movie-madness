@@ -17,6 +17,10 @@ namespace MovieDbEntities
         public int ReleaseYear { get; set; }
         public int Duration { get; set; }
         public string Rating { get; set; }
+        public float UserRating { get; set; }
+        public int UserRatingCount { get; set; }
+        public string Overview { get; set; }
+        public string PosterImageUrl { get; set; }
         public DbMovie() { }
         public DbMovie(string title, int releaseYear, int duration, string rating)
         {
@@ -35,6 +39,10 @@ namespace MovieDbEntities
             cmd.Parameters.AddWithValue("@ReleaseYear", ReleaseYear);
             cmd.Parameters.AddWithValue("@Duration", Duration);
             cmd.Parameters.AddWithValue("@Rating", Rating);
+            cmd.Parameters.AddWithValue("@UserRating", UserRating);
+            cmd.Parameters.AddWithValue("@UserRatingCount", UserRatingCount);
+            cmd.Parameters.AddWithValue("@Overview", Overview);
+            cmd.Parameters.AddWithValue("@PosterImageUrl", PosterImageUrl);
             return cmd;
         }
 

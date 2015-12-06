@@ -7,10 +7,27 @@ CREATE TABLE genre
 CREATE TABLE movie
 (
 	id INT PRIMARY KEY IDENTITY(1,1),
-	title VARCHAR(100) UNIQUE,
+	title VARCHAR(200) UNIQUE,
 	release_year INT,
 	duration INT,
-	rating VARCHAR(5)
+	rating VARCHAR(5),
+	userRating FLOAT,
+	userRatingCount INT,
+	overview VARCHAR(2500),
+	posterImageUrl VARCHAR(200)
+);
+
+CREATE TABLE backdrop
+(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	backdropUrl VARCHAR(200),
+	UNIQUE(backdropUrl)
+);
+
+CREATE TABLE movieBackdrop
+(
+	movieId INT FOREIGN KEY REFERENCES movie(id) ON DELETE CASCADE,
+	backdropId INT FOREIGN KEY REFERENCES backdrop(id) ON DELETE CASCADE
 );
 
 CREATE TABLE movieGenre
@@ -23,6 +40,7 @@ CREATE TABLE director
 (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	name VARCHAR(300),
+	imageUrl VARCHAR(200),
 	UNIQUE(name)
 );
 
@@ -36,6 +54,7 @@ CREATE TABLE actor
 (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	name VARCHAR(300),
+	imageUrl VARCHAR(200),
 	UNIQUE(name)
 );
 

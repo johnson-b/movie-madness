@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -30,7 +31,7 @@ namespace MovieMadness
 
         protected void DeleteMovie(object sender, EventArgs e)
         {
-            RepeaterItem movie = (sender as Button).NamingContainer as RepeaterItem;
+            RepeaterItem movie = (sender as LinkButton).NamingContainer as RepeaterItem;
             Label title = movie.FindControl("title") as Label;
             DbMovie.Delete(Connection, title.Text);
             GetAllMovies();

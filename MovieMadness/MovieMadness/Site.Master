@@ -7,6 +7,7 @@
     <title><%: Page.Title %> - Movie Madness</title>
     <link href="Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="Content/custom-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="Scripts/jquery-1.11.3.js"></script>
 </head>
 <body class="container">

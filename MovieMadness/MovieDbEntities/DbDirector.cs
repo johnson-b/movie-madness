@@ -12,9 +12,11 @@ namespace MovieDbEntities
         public static string TableName = "director";
         public long Id { get; set; }
         public string Name { get; set; }
-        public DbDirector(string name)
+        public string ImageUrl { get; set; }
+        public DbDirector(string name, string imageUrl)
         {
             Name = name;
+            ImageUrl = imageUrl;
         }
         public override SqlCommand Insert(SqlConnection conn)
         {
@@ -23,6 +25,7 @@ namespace MovieDbEntities
                 CommandType = System.Data.CommandType.StoredProcedure
             };
             cmd.Parameters.AddWithValue("@Name", Name);
+            cmd.Parameters.AddWithValue("@ImageUrl", ImageUrl);
             return cmd;
         }
     }

@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hasseware.Net.TMDb, Version=1.2.6.0, Culture=neutral, PublicKeyToken=4d204bf90cffca75, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hasseware.TheMovieDB.1.2.6.0\lib\net45\Hasseware.Net.TMDb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,14 +51,19 @@
   <ItemGroup>
     <Compile Include="DbActor.cs" />
     <Compile Include="DbActorRole.cs" />
+    <Compile Include="DbBackdrop.cs" />
     <Compile Include="DbDirectMovie.cs" />
     <Compile Include="DbDirector.cs" />
     <Compile Include="DbEntity.cs" />
     <Compile Include="DbMovie.cs" />
     <Compile Include="DbGenre.cs" />
+    <Compile Include="DbMovieBackdrop.cs" />
     <Compile Include="DbMovieGenre.cs" />
     <Compile Include="DbMovieRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

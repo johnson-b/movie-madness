@@ -74,6 +74,10 @@
       <Project>{5b313ce3-d184-46e1-bdf1-5811ff91bc47}</Project>
       <Name>MovieDbEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TMDbRequests\TMDbRequests.csproj">
+      <Project>{4d851232-f791-4532-99ae-aa955dae825f}</Project>
+      <Name>TMDbRequests</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

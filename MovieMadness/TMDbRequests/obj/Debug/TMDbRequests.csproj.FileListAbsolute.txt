@@ -1,0 +1,12 @@
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\bin\Debug\TMDbRequests.dll.config
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\bin\Debug\TMDbRequests.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\bin\Debug\TMDbRequests.pdb
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\bin\Debug\Hasseware.Net.TMDb.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\bin\Debug\MovieDbEntities.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\bin\Debug\MovieDbEntities.pdb
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\bin\Debug\Hasseware.Net.TMDb.xml
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\obj\Debug\TMDbRequests.csprojResolveAssemblyReference.cache
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\obj\Debug\TMDbRequests.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\TMDbRequests\obj\Debug\TMDbRequests.pdb

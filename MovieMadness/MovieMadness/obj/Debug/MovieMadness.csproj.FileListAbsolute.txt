@@ -128,3 +128,7 @@ C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\
 C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\MovieMadness\obj\Debug\MovieMadness.pdb
 C:\Users\bmj29\Documents\movie-madness\MovieMadness\MovieMadness\bin\MovieDbEntities.dll
 C:\Users\bmj29\Documents\movie-madness\MovieMadness\MovieMadness\bin\MovieDbEntities.pdb
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\Hasseware.Net.TMDb.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\Newtonsoft.Json.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\Hasseware.Net.TMDb.xml
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieMadness\bin\Newtonsoft.Json.xml

@@ -71,3 +71,5 @@ C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\FillMovieData
 C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\Newtonsoft.Json.xml
 C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\RestSharp.xml
 C:\Users\bjohnson\Desktop\movie-madness\movie-madness\MovieMadness\FillMovieDatabase\obj\Debug\FillMovieDatabase.csprojResolveAssemblyReference.cache
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\TMDbRequests.dll
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\FillMovieDatabase\bin\Debug\TMDbRequests.pdb

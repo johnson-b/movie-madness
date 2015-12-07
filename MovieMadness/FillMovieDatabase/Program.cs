@@ -19,8 +19,8 @@ namespace FillMovieDatabase
                 TMDb db = new TMDb();
                 //var moviesTask = db.GetPopularMovies(CancellationToken.None, 10);
                 //var moviesTask = db.GetComingSoonMovies(CancellationToken.None);
-                //var moviesTask = db.GetMovies(CancellationToken.None);
-                var moviesTask = db.GetMoviesSimilarTo(CancellationToken.None, "Saw");
+                var moviesTask = db.GetMovies(CancellationToken.None);
+                //var moviesTask = db.GetMoviesSimilarTo(CancellationToken.None, "Saw");
                 Task.WaitAll(moviesTask);
                 List<Movie> movies = moviesTask.Result;
                 DbEntity.ProcessMovieResponse(movies, connection);

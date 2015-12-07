@@ -42,7 +42,7 @@ namespace TMDbRequests
             {
                 using (var client = new ServiceClient(Properties.Settings.Default.tmdbApiKey))
                 {
-                    for (int i = 3001; i <= 6000; i++)
+                    for (int i = 10000; i <= 25000; i++)
                     {
                         try
                         {

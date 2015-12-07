@@ -198,28 +198,12 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Edit.aspx" />
-    <Content Include="Home.aspx" />
     <Content Include="Images\bighero6.jpg" />
     <Content Include="Images\movie.jpg" />
     <Content Include="Images\saw.jpg" />
     <Content Include="Images\starwars-new.jpg" />
     <Content Include="Images\vintage-cam.jpg" />
-    <Content Include="Landing\css\bootstrap.css" />
-    <Content Include="Landing\css\bootstrap.min.css" />
-    <Content Include="Landing\css\landing-page.css" />
-    <Content Include="Landing\font-awesome\css\font-awesome.css" />
-    <Content Include="Landing\font-awesome\css\font-awesome.min.css" />
-    <Content Include="Landing\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="Landing\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Landing\img\banner-bg.jpg" />
-    <Content Include="Landing\img\dog.png" />
-    <Content Include="Landing\img\intro-bg.jpg" />
-    <Content Include="Landing\img\ipad.png" />
-    <Content Include="Landing\img\phones.png" />
-    <Content Include="Landing\index.html" />
-    <Content Include="Landing\js\bootstrap.js" />
-    <Content Include="Landing\js\bootstrap.min.js" />
-    <Content Include="Landing\js\jquery.js" />
+    <Content Include="Landing.html" />
     <Content Include="packages.config" />
     <Content Include="Content\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap\css\bootstrap-theme.min.css.map" />
@@ -260,40 +244,6 @@
     <Content Include="Content\font-awesome\scss\_rotated-flipped.scss" />
     <Content Include="Content\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\font-awesome\scss\_variables.scss" />
-    <Content Include="Landing\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Landing\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Landing\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Landing\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="Landing\font-awesome\less\bordered-pulled.less" />
-    <Content Include="Landing\font-awesome\less\core.less" />
-    <Content Include="Landing\font-awesome\less\fixed-width.less" />
-    <Content Include="Landing\font-awesome\less\font-awesome.less" />
-    <Content Include="Landing\font-awesome\less\icons.less" />
-    <Content Include="Landing\font-awesome\less\larger.less" />
-    <Content Include="Landing\font-awesome\less\list.less" />
-    <Content Include="Landing\font-awesome\less\mixins.less" />
-    <Content Include="Landing\font-awesome\less\path.less" />
-    <Content Include="Landing\font-awesome\less\rotated-flipped.less" />
-    <Content Include="Landing\font-awesome\less\spinning.less" />
-    <Content Include="Landing\font-awesome\less\stacked.less" />
-    <Content Include="Landing\font-awesome\less\variables.less" />
-    <Content Include="Landing\font-awesome\scss\font-awesome.scss" />
-    <Content Include="Landing\font-awesome\scss\_bordered-pulled.scss" />
-    <Content Include="Landing\font-awesome\scss\_core.scss" />
-    <Content Include="Landing\font-awesome\scss\_fixed-width.scss" />
-    <Content Include="Landing\font-awesome\scss\_icons.scss" />
-    <Content Include="Landing\font-awesome\scss\_larger.scss" />
-    <Content Include="Landing\font-awesome\scss\_list.scss" />
-    <Content Include="Landing\font-awesome\scss\_mixins.scss" />
-    <Content Include="Landing\font-awesome\scss\_path.scss" />
-    <Content Include="Landing\font-awesome\scss\_rotated-flipped.scss" />
-    <Content Include="Landing\font-awesome\scss\_spinning.scss" />
-    <Content Include="Landing\font-awesome\scss\_stacked.scss" />
-    <Content Include="Landing\font-awesome\scss\_variables.scss" />
-    <Content Include="Landing\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Landing\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Landing\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Landing\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -333,7 +283,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Default.aspx" />
+    <Content Include="Home.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -391,12 +341,12 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
@@ -407,13 +357,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,14 +13,23 @@ namespace MovieDbEntities
     public class DbMovie : DbEntity
     {
         public static string TableName = "movie";
+        [JsonProperty]
         public long Id { get; set; }
+        [JsonProperty]
         public string Title { get; set; }
+        [JsonProperty]
         public int ReleaseYear { get; set; }
+        [JsonProperty]
         public int Duration { get; set; }
+        [JsonProperty]
         public string Rating { get; set; }
+        [JsonProperty]
         public float UserRating { get; set; }
+        [JsonProperty]
         public int UserRatingCount { get; set; }
+        [JsonProperty]
         public string Overview { get; set; }
+        [JsonProperty]
         public string PosterImageUrl { get; set; }
         public DbMovie() { }
         public DbMovie(string title, int releaseYear, int duration, string rating)

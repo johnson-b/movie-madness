@@ -22,15 +22,16 @@
                 </div>
                 <ul class="col-lg-5 col-lg-offset-2 col-sm-push-2 col-sm-6 caption-style-1">
                     <li class="container-shadow">
-                        <img class="container-shadow img-responsive img-rounded img-fade" src="../Images/starwars-new.jpg" alt="">
-                        <a href="">
+                        <img id="moviePoster" class="container-shadow img-responsive img-rounded img-fade" src="../Images/starwars-new.jpg" alt="" onload="getMovieImageUrl()">
+                        <%--<asp:Image runat="server" ID="MoviePoster" CssClas="container-shadow img-responsive img-rounded" AlternateText="Image Unavailable" ImageUrl="~/Images/bighero6.jpg" />--%>
+                        <%--<a href="">
                             <div class="caption">
                                 <div class="blur"></div>
                                 <div class="caption-text font-raleway">
                                     <h3>Coming Soon!</h3>
                                 </div>
                             </div>
-                        </a>
+                        </a>--%>
                     </li>
                 </ul>
             </div>

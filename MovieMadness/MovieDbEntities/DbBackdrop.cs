@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,25 @@ namespace MovieDbEntities
             };
             cmd.Parameters.AddWithValue("@BackdropUrl", BackdropUrl);
             return cmd;
+        }
+
+        public static DbBackdrop GetMovieBackdrop(SqlConnection conn, long movieId)
+        {
+            conn.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable data = new DataTable();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "getMovieBackdrop";
+            cmd.Parameters.AddWithValue("@MovieId", movieId);
+            cmd.CommandType = CommandType.StoredProcedure;
+            data.Load(cmd.ExecuteReader());
+            var backdropRes = data.Select().FirstOrDefault();
+            conn.Close();
+            DbBackdrop backdrop = new DbBackdrop();
+            backdrop.BackdropUrl = backdropRes["backdropUrl"] as string;
+            backdrop.Id = (long)backdropRes["id"];
+            return backdrop;
+            
         }
     }
 }

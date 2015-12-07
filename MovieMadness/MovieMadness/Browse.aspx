@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="MovieMadness._Home" EnableEventValidation="false" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Browse.aspx.cs" Inherits="MovieMadness._Browse" EnableEventValidation="false" %>
 
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -41,8 +41,9 @@
                 <ItemTemplate>
                     <tr>
                         <td class="pointer table-item-hover">
-                            <asp:Label runat="server" ID="title" Text='<%# Eval("title") %>'>
-                            </asp:Label>
+                            <asp:LinkButton runat="server" CssClass="button-transparent" OnClick="MovieDetails">
+                                <asp:Label runat="server" ID="title" Text='<%# Eval("title") %>'></asp:Label>
+                            </asp:LinkButton>
                         </td>
                         <td class="text-center">
                             <%# Eval("release_year") %>
@@ -59,7 +60,7 @@
                             </asp:LinkButton>
                         </td>
                         <td class="pointer text-center">
-                            <asp:LinkButton runat="server" CssClass="btn btn-primary" OnClick="EditMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px" >
+                            <asp:LinkButton runat="server" CssClass="btn btn-primary" OnClick="EditMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px">
                                 <span aria-hidden="true" class="fa fa-pencil-square-o fa-lg"></span>
                             </asp:LinkButton>
                         </td>
@@ -67,5 +68,16 @@
                 </ItemTemplate>
             </asp:Repeater>
         </table>
+    </div>
+    <div style="overflow: hidden;">
+        <asp:Repeater ID="MoviesPaging" runat="server" OnItemCommand="LoadPage">
+            <ItemTemplate>
+                <asp:LinkButton ID="Page"
+                    Style="padding: 8px; margin: 2px; background: #ffa100; border: solid 1px #666; font: 8pt tahoma;"
+                    CommandName="Page" CommandArgument="<%# Container.DataItem %>"
+                    runat="server" ForeColor="White" Font-Bold="True"><%# Container.DataItem %>
+                </asp:LinkButton>
+            </ItemTemplate>
+        </asp:Repeater>
     </div>
 </asp:Content>

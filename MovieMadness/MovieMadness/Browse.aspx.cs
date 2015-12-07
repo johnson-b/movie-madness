@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 
 namespace MovieMadness
 {
-    public partial class _Home : Page
+    public partial class _Browse : Page
     {
         SqlConnection Connection { get; set; }
 
@@ -39,7 +39,7 @@ namespace MovieMadness
 
         protected void EditMovie(object sender, EventArgs e)
         {
-            RepeaterItem movie = (sender as Button).NamingContainer as RepeaterItem;
+            RepeaterItem movie = (sender as LinkButton).NamingContainer as RepeaterItem;
             Label title = movie.FindControl("title") as Label;
             Response.Redirect(string.Format("Edit.aspx?movie={0}", title.Text));
         }
@@ -54,6 +54,18 @@ namespace MovieMadness
         protected void InsertMovie(object sender, EventArgs e)
         {
             Response.Redirect("Add.aspx");
+        }
+
+        protected void LoadPage(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+
+        protected void MovieDetails(object sender, EventArgs e)
+        {
+            RepeaterItem movie = (sender as LinkButton).NamingContainer as RepeaterItem;
+            Label title = movie.FindControl("title") as Label;
+            Response.Redirect(string.Format("MovieDetail.aspx?movie={0}", title.Text));
         }
     }
 }

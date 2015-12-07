@@ -34,7 +34,7 @@ namespace MovieMadness
             DbMovie movie = new DbMovie(MovieTitle.Text, Convert.ToInt32(ReleaseDate.Text), Convert.ToInt32(Duration.Text), Rating.Text);
             movie.Id = MovieId;
             DbMovie.UpdateMovie(Connection, movie);
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Browse.aspx");
         }
     }
 }

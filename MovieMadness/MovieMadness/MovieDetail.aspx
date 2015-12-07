@@ -1,44 +1,16 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Movie Madness</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="../Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Norican:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Norican">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
-    <link href="http://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
-    <!-- Custom CSS -->
-    <link href="../Content/landing-styles.css" rel="stylesheet" />
-</head>
-<body>
-    <!-- Header -->
-    <a name="about"></a>
+﻿<%@ Page Title="Movie Madness" Language="C#" MasterPageFile="~/MovieDetail.Master" AutoEventWireup="true" CodeBehind="MovieDetail.aspx.cs" Inherits="MovieMadness.MovieDetail" EnableEventValidation="false" %>
+
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MovieDetail">
     <div class="intro-header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="intro-message">
-                        <h1>Movie Madness</h1>
-                        <h3>One place for all your movie content</h3>
-                        <hr class="intro-divider">
-                    </div>
+                    <div class="intro-message"></div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Page Content -->
-    <a name="services"></a>
+    </div>   
+    
     <div class="content-section-a">
         <div class="container">
             <div class="row">
@@ -117,23 +89,5 @@
                 </ul>
             </div>
         </div>
-    </div>
-
-    <div class="banner">
-    </div>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="copyright text-muted small">Copyright &copy; Movie Madness - 2015. All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- jQuery -->
-    <script src="../Scripts/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../Content/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+    </div 
+</asp:Content>

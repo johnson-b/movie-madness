@@ -61,12 +61,24 @@ namespace MovieDbEntities
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataSet data = new DataSet();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = string.Format("SELECT * FROM {0}", TableName);
+            cmd.CommandText = "getPageOfMovies";
+            cmd.Parameters.AddWithValue("@PageStart", 1);
+            cmd.Parameters.AddWithValue("@MoviesPerPage", 30);
+            cmd.CommandType = CommandType.StoredProcedure;
             adapter.SelectCommand = cmd;
             conn.Open();
             adapter.Fill(data);
             conn.Close();
             return data;
+            //SqlDataAdapter adapter = new SqlDataAdapter();
+            //DataSet data = new DataSet();
+            //SqlCommand cmd = conn.CreateCommand();
+            //cmd.CommandText = string.Format("SELECT * FROM {0}", TableName);
+            //adapter.SelectCommand = cmd;
+            //conn.Open();
+            //adapter.Fill(data);
+            //conn.Close();
+            //return data;
 
         }
 

@@ -10,7 +10,7 @@
 namespace MovieMadness {
     
     
-    public partial class _Home {
+    public partial class _Browse {
         
         /// <summary>
         /// BtnAdd control.
@@ -47,5 +47,14 @@ namespace MovieMadness {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Movies;
+        
+        /// <summary>
+        /// MoviesPaging control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater MoviesPaging;
     }
 }

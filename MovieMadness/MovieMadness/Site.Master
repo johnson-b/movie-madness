@@ -9,16 +9,19 @@
     <link href="Content/custom-styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="Scripts/jquery-1.11.3.js"></script>
+    <script src="Scripts/jquery.bootpag.min.js"></script>
 </head>
-<body class="container">
+<body>
     <form runat="server">
         <header>
             <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         </header>
-        <div id="body">
-            <section class="content-wrapper main-content clear-fix">
-                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-            </section>
+        <div class="container">
+            <div id="body">
+                <section class="content-wrapper main-content clear-fix">
+                    <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                </section>
+            </div>
         </div>
         <footer>
             <nav class="navbar navbar-default navbar-fixed-bottom">

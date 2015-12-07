@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MovieDetail.Master.cs" Inherits="MovieMadness.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Movie Madness</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Norican:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Norican">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+    <link href="http://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link href="Content/movieDetail-styles.css" rel="stylesheet" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ContentPlaceHolder runat="server" ID="MovieDetail" />
+    </form>
+</body>
+</html>

@@ -10,3 +10,13 @@
 .table-item-hover:hover {
     background: #e4e4e4
 }
+
+.button-transparent {
+    color: #000000;
+    text-decoration: none;
+}
+
+.button-transparent:hover {
+    color: #000000;
+    text-decoration: none;
+}

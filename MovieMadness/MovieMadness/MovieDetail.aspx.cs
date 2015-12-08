@@ -33,9 +33,15 @@ namespace MovieMadness
         }
 
         [WebMethod]
-        public static DbMovie GetImageUrl(string title)
+        public static DbMovie GetMovieDetails(string title)
         {
             return DbMovie.GetMovie(GetSqlConnection(), title);
+        }
+
+        [WebMethod]
+        public static List<DbBackdrop> GetMovieBackdrops(long id)
+        {
+            return DbBackdrop.GetMovieBackdrop(GetSqlConnection(), id);
         }
 
         public static SqlConnection GetSqlConnection()

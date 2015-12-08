@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="Movie Madness" Language="C#" MasterPageFile="~/MovieDetail.Master" AutoEventWireup="true" CodeBehind="MovieDetail.aspx.cs" Inherits="MovieMadness.MovieDetail" EnableEventValidation="false" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MovieDetail">
+    <script>
+        $(document).ready(function () {
+            getMovieDetail();
+        });
+    </script>
     <div class="intro-header">
         <div class="container">
             <div class="row">
@@ -9,29 +14,21 @@
                 </div>
             </div>
         </div>
-    </div>   
-    
+    </div>
+
     <div class="content-section-a">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading font-raleway">Coming Soon to a Theater Near You</h2>
-                    <p class="lead font-raleway">View movies not yet released in theaters. See the latest and greatest, updated every day.</p>
+                    <h2 id="movie-title" class="section-heading font-raleway"></h2>
+                    <p id="movie-duration-release-rating" class="font-raleway"></p>
+                    <p id="movie-overview" class="lead font-raleway"></p>
                 </div>
                 <ul class="col-lg-5 col-lg-offset-2 col-sm-push-2 col-sm-6 caption-style-1">
                     <li class="container-shadow">
-                        <img id="moviePoster" class="container-shadow img-responsive img-rounded img-fade" src="../Images/starwars-new.jpg" alt="" onload="getMovieImageUrl()">
-                        <%--<asp:Image runat="server" ID="MoviePoster" CssClas="container-shadow img-responsive img-rounded" AlternateText="Image Unavailable" ImageUrl="~/Images/bighero6.jpg" />--%>
-                        <%--<a href="">
-                            <div class="caption">
-                                <div class="blur"></div>
-                                <div class="caption-text font-raleway">
-                                    <h3>Coming Soon!</h3>
-                                </div>
-                            </div>
-                        </a>--%>
+                        <img id="movie-poster" class="container-shadow img-responsive img-rounded img-fade" src="place-holder" alt="<Image Unavailable>">
                     </li>
                 </ul>
             </div>
@@ -43,8 +40,8 @@
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading font-raleway">From New to Old: Movies<br />You Didn't Know Existed</h2>
-                    <p class="lead font-raleway">From new releases to classics that have been around for years. Browse thousands of movies, all at your finger tips.</p>
+                    <h2 id="movie-director" class="section-heading font-raleway">/h2>
+                    <p class="lead font-raleway"></p>
                 </div>
                 <ul class="col-lg-5 col-sm-pull-6 col-sm-6 caption-style-1">
                     <li class="container-shadow">
@@ -73,7 +70,6 @@
                     <p class="lead font-raleway">Can't figure out what movie to watch on Friday night? Let us help. We will guide you to your very own personal recommendation based on your own preference in movies.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-
                 </div>
                 <ul class="col-lg-5 col-lg-offset-2 col-sm-push-2 col-sm-6 caption-style-1">
                     <li class="container-shadow">
@@ -90,5 +86,5 @@
                 </ul>
             </div>
         </div>
-    </div 
+    </div>
 </asp:Content>

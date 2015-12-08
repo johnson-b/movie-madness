@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,7 +12,9 @@ namespace MovieDbEntities
     public class DbBackdrop : DbEntity
     {
         public static string TableName = "backdrop";
+        [JsonProperty]
         public long Id { get; set; }
+        [JsonProperty]
         public string BackdropUrl { get; set; }
         public override SqlCommand Insert(SqlConnection conn)
         {
@@ -23,7 +26,7 @@ namespace MovieDbEntities
             return cmd;
         }
 
-        public static DbBackdrop GetMovieBackdrop(SqlConnection conn, long movieId)
+        public static List<DbBackdrop> GetMovieBackdrop(SqlConnection conn, long movieId)
         {
             conn.Open();
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -33,13 +36,17 @@ namespace MovieDbEntities
             cmd.Parameters.AddWithValue("@MovieId", movieId);
             cmd.CommandType = CommandType.StoredProcedure;
             data.Load(cmd.ExecuteReader());
-            var backdropRes = data.Select().FirstOrDefault();
             conn.Close();
-            DbBackdrop backdrop = new DbBackdrop();
-            backdrop.BackdropUrl = backdropRes["backdropUrl"] as string;
-            backdrop.Id = (long)backdropRes["id"];
-            return backdrop;
-            
+            List<DbBackdrop> backdrops = new List<DbBackdrop>();
+            foreach (var result in data.Select())
+            {
+                DbBackdrop backdrop = new DbBackdrop();
+                backdrop.BackdropUrl = result["backdropUrl"] as string;
+                backdrop.Id = (int)result["id"];
+                backdrops.Add(backdrop);
+            }
+
+            return backdrops;
         }
     }
 }

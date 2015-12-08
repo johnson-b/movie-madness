@@ -4,7 +4,7 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="Default.aspx">Movie Madness</a>
+                <a class="navbar-brand" href="Landing.html">Movie Madness</a>
             </div>
             <div class="navbar-form navbar-right" role="link">
                 <asp:Button ID="BtnAdd" runat="server" CssClass="btn btn-primary" Text="Add Movie" OnClick="InsertMovie" />
@@ -41,9 +41,12 @@
                 <ItemTemplate>
                     <tr>
                         <td class="pointer table-item-hover">
-                            <asp:LinkButton runat="server" CssClass="button-transparent" OnClick="MovieDetails">
+                            <div class="button-transparent" onclick="return movieDetails(this)">
+                                <%# Eval("title") %>
+                            </div>
+                            <%--<asp:LinkButton runat="server" CssClass="button-transparent" OnClick="MovieDetails">
                                 <asp:Label runat="server" ID="title" Text='<%# Eval("title") %>'></asp:Label>
-                            </asp:LinkButton>
+                            </asp:LinkButton>--%>
                         </td>
                         <td class="text-center">
                             <%# Eval("release_year") %>
@@ -55,29 +58,21 @@
                             <%# Eval("rating") %>
                         </td>
                         <td class="pointer text-center">
-                            <asp:LinkButton runat="server" CssClass="btn btn-danger" OnClick="DeleteMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px">
+                            <button class="btn btn-danger fa fa-trash-o fa-lg" onclick="deleteMovie(this)"></button>
+
+                           <%-- <asp:LinkButton runat="server" CssClass="btn btn-danger" OnClick="DeleteMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px">
                                 <span aria-hidden="true" class="fa fa-trash-o fa-lg"></span>
-                            </asp:LinkButton>
+                            </asp:LinkButton>--%>
                         </td>
                         <td class="pointer text-center">
-                            <asp:LinkButton runat="server" CssClass="btn btn-primary" OnClick="EditMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px">
+                            <button class="btn btn-primary fa fa-pencil-square-o fa-lg" onclick="return editMovie(this)"></button>
+                            <%--<asp:LinkButton runat="server" CssClass="btn btn-primary" OnClick="EditMovie" Style="font-family: Arial, Helvetica, sans-serif; font-size: 14px">
                                 <span aria-hidden="true" class="fa fa-pencil-square-o fa-lg"></span>
-                            </asp:LinkButton>
+                            </asp:LinkButton>--%>
                         </td>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>
         </table>
-    </div>
-    <div style="overflow: hidden;">
-        <asp:Repeater ID="MoviesPaging" runat="server" OnItemCommand="LoadPage">
-            <ItemTemplate>
-                <asp:LinkButton ID="Page"
-                    Style="padding: 8px; margin: 2px; background: #ffa100; border: solid 1px #666; font: 8pt tahoma;"
-                    CommandName="Page" CommandArgument="<%# Container.DataItem %>"
-                    runat="server" ForeColor="White" Font-Bold="True"><%# Container.DataItem %>
-                </asp:LinkButton>
-            </ItemTemplate>
-        </asp:Repeater>
     </div>
 </asp:Content>

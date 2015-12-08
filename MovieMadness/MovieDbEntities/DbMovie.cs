@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace MovieDbEntities
 {
@@ -80,22 +81,13 @@ namespace MovieDbEntities
             adapter.Fill(data);
             conn.Close();
             return data;
-            //SqlDataAdapter adapter = new SqlDataAdapter();
-            //DataSet data = new DataSet();
-            //SqlCommand cmd = conn.CreateCommand();
-            //cmd.CommandText = string.Format("SELECT * FROM {0}", TableName);
-            //adapter.SelectCommand = cmd;
-            //conn.Open();
-            //adapter.Fill(data);
-            //conn.Close();
-            //return data;
-
         }
 
         public static DbMovie GetMovie(SqlConnection conn, string title)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM {0} WHERE title='{1}'", TableName, title), conn);
+            title = title.Replace("'", "''");
+            SqlCommand cmd = new SqlCommand(string.Format("SELECT * FROM {0} WHERE title='{1}'", TableName, Uri.UnescapeDataString(title)), conn);
             SqlDataReader reader = cmd.ExecuteReader();
             DbMovie movie = new DbMovie();
             while (reader.Read())
@@ -105,6 +97,10 @@ namespace MovieDbEntities
                 movie.ReleaseYear = reader.GetInt32(2);
                 movie.Duration = reader.GetInt32(3);
                 movie.Rating = reader.GetString(4) as string;
+                movie.UserRating = (float)reader.GetDouble(5);
+                movie.UserRatingCount = reader.GetInt32(6);
+                movie.Overview = reader.GetString(7) as string;
+                movie.PosterImageUrl = reader.GetString(8) as string;
             }
             conn.Close();
             return movie;

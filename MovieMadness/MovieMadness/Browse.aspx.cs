@@ -29,12 +29,14 @@ namespace MovieMadness
             Movies.DataBind();
         }
 
-        protected void DeleteMovie(object sender, EventArgs e)
+        [WebMethod]
+        public static void DeleteMovie(string title)
         {
-            RepeaterItem movie = (sender as LinkButton).NamingContainer as RepeaterItem;
-            Label title = movie.FindControl("title") as Label;
-            DbMovie.Delete(Connection, title.Text);
-            GetAllMovies();
+            DbMovie.Delete(GetSqlConnection(), title.Trim());
+            //RepeaterItem movie = (sender as LinkButton).NamingContainer as RepeaterItem;
+            //Label title = movie.FindControl("title") as Label;
+            //DbMovie.Delete(Connection, title.Text);
+            //GetAllMovies();
         }
 
         protected void EditMovie(object sender, EventArgs e)
@@ -56,16 +58,16 @@ namespace MovieMadness
             Response.Redirect("Add.aspx");
         }
 
-        protected void LoadPage(object source, RepeaterCommandEventArgs e)
-        {
-
-        }
-
         protected void MovieDetails(object sender, EventArgs e)
         {
             RepeaterItem movie = (sender as LinkButton).NamingContainer as RepeaterItem;
             Label title = movie.FindControl("title") as Label;
             Response.Redirect(string.Format("MovieDetail.aspx?movie={0}", title.Text));
+        }
+
+        public static SqlConnection GetSqlConnection()
+        {
+            return new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["bmj29_db"].ConnectionString);
         }
     }
 }

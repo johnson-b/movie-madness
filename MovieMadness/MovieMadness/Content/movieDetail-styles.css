@@ -26,7 +26,7 @@ html {
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .lead {
@@ -49,11 +49,11 @@ html {
     padding-bottom: 20%;
 }
 
-.intro-message > h1 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 5em;
-}
+    .intro-message > h1 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 5em;
+    }
 
 .intro-divider {
     width: 400px;
@@ -70,9 +70,9 @@ html {
         padding-bottom: 15%;
     }
 
-    .intro-message > h1 {
-        font-size: 3em;
-    }
+        .intro-message > h1 {
+            font-size: 3em;
+        }
 
     ul.intro-social-buttons > li {
         display: block;
@@ -80,9 +80,9 @@ html {
         padding: 0;
     }
 
-    ul.intro-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
+        ul.intro-social-buttons > li:last-child {
+            margin-bottom: 0;
+        }
 
     .intro-divider {
         width: 100%;
@@ -124,15 +124,15 @@ html {
     background-size: cover;
 }
 
-.banner h2 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 3em;
-}
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
 
-.banner ul {
-    margin-bottom: 0;
-}
+    .banner ul {
+        margin-bottom: 0;
+    }
 
 .banner-social-buttons {
     float: right;
@@ -159,9 +159,9 @@ html {
         padding: 0;
     }
 
-    ul.banner-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
+        ul.banner-social-buttons > li:last-child {
+            margin-bottom: 0;
+        }
 }
 
 footer {

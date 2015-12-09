@@ -30,3 +30,4 @@ C:\Users\bmj29\Documents\movie-madness\MovieMadness\MovieDbEntities\bin\Debug\Ha
 C:\Users\bmj29\Documents\movie-madness\MovieMadness\MovieDbEntities\bin\Debug\Newtonsoft.Json.dll
 C:\Users\bmj29\Documents\movie-madness\MovieMadness\MovieDbEntities\bin\Debug\Hasseware.Net.TMDb.xml
 C:\Users\bmj29\Documents\movie-madness\MovieMadness\MovieDbEntities\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Kujo\Documents\Visual Studio 2015\Projects\movie-madness\MovieMadness\MovieDbEntities\obj\Debug\MovieDbEntities.csprojResolveAssemblyReference.cache

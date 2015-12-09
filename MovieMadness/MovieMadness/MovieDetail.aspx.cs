@@ -39,9 +39,27 @@ namespace MovieMadness
         }
 
         [WebMethod]
+        public static List<DbGenre> GetMovieGenres(long id)
+        {
+            return DbGenre.GetMovieGenres(GetSqlConnection(), id);
+        }
+
+        [WebMethod]
         public static List<DbBackdrop> GetMovieBackdrops(long id)
         {
             return DbBackdrop.GetMovieBackdrop(GetSqlConnection(), id);
+        }
+
+        [WebMethod]
+        public static DbDirector GetMovieDirector(long id)
+        {
+            return DbDirector.GetMovieDirector(GetSqlConnection(), id);
+        }
+
+        [WebMethod]
+        public static List<DbActor> GetMovieActors(long id)
+        {
+            return DbActor.GetMovieActors(GetSqlConnection(), id);
         }
 
         public static SqlConnection GetSqlConnection()

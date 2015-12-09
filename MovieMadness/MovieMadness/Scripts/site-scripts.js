@@ -14,16 +14,81 @@
                 var duration = res.d.Duration;
                 var release = res.d.ReleaseYear;
                 var rating = res.d.Rating;
-                $("#movie-duration-release-rating").text(duration + " min. | " + release + " | " + rating);
+                // get movie genres
+                var genreString = "";
+                getMovieGenres(res.d.Id, function (gRes) {
+                    for (var i = 0; i < gRes.d.length; i++) {
+                        if (i === gRes.d.length - 1) {
+                            genreString += gRes.d[i].Genre;
+                        } else {
+                            genreString += gRes.d[i].Genre + ", "
+                        }
+                    }
+                    $("#movie-duration-release-rating").text(duration + " min. | " + release + " | " + rating + " | " + genreString);
+                });
                 $("#movie-overview").text(res.d.Overview);
                 $("#movie-poster").attr("src", res.d.PosterImageUrl);
                 getMovieBackdrop(res.d.Id);
+                getMovieDirector(res.d.Id, function (dRes) {
+                    $("#movie-director-name").text("Director | " + dRes.d.Name);
+                });
+                getMovieActors(res.d.Id, function (aRes) {
+                    $("#actor-image").attr("src", aRes.d[0].ImageUrl);
+                    for (var i = 0; i < aRes.d.length; i++) {
+                        if (i === aRes.d.length || i === 21) {
+                            $("#movie-actor").append(aRes.d[i].Name);
+                            break;
+                        } else {
+                            $("#movie-actor").append(aRes.d[i].Name + "</br>");
+                        }
+                    }
+                });
             },
             error: function (err) {
                 console.log(err);
             }
         });
     });
+}
+
+function getMovieActors(id, callback) {
+    $(document).ready(function () {
+        jQuery.ajax({
+            url: 'MovieDetail.aspx/GetMovieActors',
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify({
+                "id": id
+            }),
+            contentType: "application/json; charset=utf-8",
+            success: function (res) {
+                callback(res);
+            },
+            error: function (err) {
+                console.log(err)
+            }
+        })
+    })
+}
+
+function getMovieDirector(id, callback) {
+    $(document).ready(function () {
+        jQuery.ajax({
+            url: 'MovieDetail.aspx/GetMovieDirector',
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify({
+                "id": id
+            }),
+            contentType: "application/json; charset=utf-8",
+            success: function (res) {
+                callback(res);
+            },
+            error: function (err) {
+                console.log(err)
+            }
+        })
+    })
 }
 
 function getMovieBackdrop(id) {
@@ -51,6 +116,26 @@ function getMovieBackdrop(id) {
     });
 }
 
+function getMovieGenres(id, callback) {
+    $(document).ready(function () {
+        jQuery.ajax({
+            url: 'MovieDetail.aspx/GetMovieGenres',
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify({
+                "id": id
+            }),
+            contentType: "application/json; charset=utf-8",
+            success: function (res) {
+                callback(res);
+            },
+            error: function (err) {
+                console.log(err)
+            }
+        })
+    })
+}
+
 function deleteMovie(element) {
     var title = element.parentElement.parentElement.cells[0].textContent;
     jQuery.ajax({
@@ -63,6 +148,25 @@ function deleteMovie(element) {
         contentType: "application/json; charset=utf-8",
         success: function (res) {
             console.log("success");
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+
+function addMovieToFavorites(element) {
+    var title = element.parentElement.parentElement.cells[1].textContent.trim();
+    jQuery.ajax({
+        url: 'Wizard.aspx/AddMovieToFavorites',
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify({
+            "title": title
+        }),
+        contentType: "application/json; charset=utf-8",
+        success: function (res) {
+            console.log(res);
         },
         error: function (err) {
             console.log(err);

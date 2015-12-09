@@ -1,13 +1,10 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Browse.aspx.cs" Inherits="MovieMadness._Browse" EnableEventValidation="false" %>
+﻿<%@ Page Title="Wizard" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Wizard.aspx.cs" Inherits="MovieMadness.Wizard" EnableEventValidation="false" %>
 
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="Landing.html">Movie Madness</a>
-            </div>
-            <div class="navbar-form navbar-right" role="link">
-                <asp:Button ID="BtnAdd" runat="server" CssClass="btn btn-primary" Text="Add Movie" OnClick="InsertMovie" />
             </div>
             <div class="navbar-form navbar-right" role="search">
                 <div class="form-group">
@@ -19,31 +16,28 @@
     </nav>
 </asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <div>
+    <div id="browse-area" style="height: 500px; overflow-y: scroll;">
         <table class="table table-responsive">
             <asp:Repeater ID="Movies" runat="server">
                 <HeaderTemplate>
                     <thead>
                         <tr>
-                            <td class="col-md-5"><strong>Title</strong>
-                            </td>
-                            <td class="text-center col-md-2"><strong>Release Date</strong>
-                            </td>
-                            <td class="text-center col-md-2"><strong>Duration</strong>
-                            </td>
+                            <td class="col-md-.5"></td>
+                            <td class="col-md-5"><strong>Title</strong></td>
+                            <td class="text-center col-md-2"><strong>Release Date</strong></td>
+                            <td class="text-center col-md-2"><strong>Duration</strong></td>
                             <td class="text-center col-md-2"><strong>Rating</strong>
                             </td>
-                            <td class="col-md-.5"></td>
-                            <td class="col-md-.5"></td>
                         </tr>
                     </thead>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
-                        <td class="pointer table-item-hover">
-                            <div class="button-transparent" onclick="return movieDetails(this)">
-                                <%# Eval("title") %>
-                            </div>
+                        <td class="pointer text-center">
+                            <div class="fa fa-plus fa-lg" onclick="addMovieToFavorites(this)" />
+                        </td>
+                        <td>
+                            <%# Eval("title") %>
                         </td>
                         <td class="text-center">
                             <%# Eval("release_year") %>
@@ -54,15 +48,10 @@
                         <td class="text-center">
                             <%# Eval("rating") %>
                         </td>
-                        <td class="pointer text-center">
-                            <button class="btn btn-danger fa fa-trash-o fa-lg" onclick="deleteMovie(this)"></button>
-                        </td>
-                        <td class="pointer text-center">
-                            <button class="btn btn-primary fa fa-pencil-square-o fa-lg" onclick="return editMovie(this)"></button>
-                        </td>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>
         </table>
     </div>
+    <div id="place-holder">Begin by searching for your favorite movies. After each search, add up to three movies to your list.</div>
 </asp:Content>

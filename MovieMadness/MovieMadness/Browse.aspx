@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Browse.aspx.cs" Inherits="MovieMadness._Browse" EnableEventValidation="false" %>
 
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #4f6dff">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="Landing.html">Movie Madness</a>
+                <a class="navbar-brand" href="Landing.html" style="color: white;">Movie Madness</a>
             </div>
             <div class="navbar-form navbar-right" role="link">
-                <asp:Button ID="BtnAdd" runat="server" CssClass="btn btn-primary" Text="Add Movie" OnClick="InsertMovie" />
+                <asp:Button ID="BtnAdd" runat="server" CssClass="btn btn-default" Text="Add Movie" OnClick="InsertMovie" />
             </div>
             <div class="navbar-form navbar-right" role="search">
                 <div class="form-group">
@@ -58,7 +58,7 @@
                             <button class="btn btn-danger fa fa-trash-o fa-lg" onclick="deleteMovie(this)"></button>
                         </td>
                         <td class="pointer text-center">
-                            <button class="btn btn-primary fa fa-pencil-square-o fa-lg" onclick="return editMovie(this)"></button>
+                            <button class="btn btn-default fa fa-pencil-square-o fa-lg" onclick="return editMovie(this)"></button>
                         </td>
                     </tr>
                 </ItemTemplate>

@@ -43,7 +43,15 @@
       <HintPath>..\packages\AspNet.ScriptManager.jQuery.2.1.4\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Hasseware.Net.TMDb, Version=1.2.6.0, Culture=neutral, PublicKeyToken=4d204bf90cffca75, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hasseware.TheMovieDB.1.2.6.0\lib\net45\Hasseware.Net.TMDb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -253,6 +261,7 @@
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\creative.js" />
     <Content Include="Scripts\jquery-1.11.3.js" />
+    <Content Include="SimilarMovies.aspx" />
     <Content Include="Wizard.aspx" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
@@ -378,6 +387,13 @@
     <Compile Include="MovieDetail.Master.designer.cs">
       <DependentUpon>MovieDetail.Master</DependentUpon>
     </Compile>
+    <Compile Include="SimilarMovies.aspx.cs">
+      <DependentUpon>SimilarMovies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SimilarMovies.aspx.designer.cs">
+      <DependentUpon>SimilarMovies.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -414,6 +430,10 @@
     <ProjectReference Include="..\MovieDbEntities\MovieDbEntities.csproj">
       <Project>{5b313ce3-d184-46e1-bdf1-5811ff91bc47}</Project>
       <Name>MovieDbEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMDbRequests\TMDbRequests.csproj">
+      <Project>{4d851232-f791-4532-99ae-aa955dae825f}</Project>
+      <Name>TMDbRequests</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

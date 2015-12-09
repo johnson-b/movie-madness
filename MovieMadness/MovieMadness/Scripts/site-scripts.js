@@ -166,7 +166,87 @@ function addMovieToFavorites(element) {
         }),
         contentType: "application/json; charset=utf-8",
         success: function (res) {
-            console.log(res);
+            $("#favorite-list").empty();
+            for (var i = 0; i < res.d.length; i++) {
+                $("#favorite-list").append('<li class="list-group-item"><div class="fa fa-minus-square-o pointer" onclick="removeFavorite(this)"/>\t' + res.d[i].Title + '</li>');
+            }
+            if (res.d.length === 3) {
+                $("#submit-button").prop("disabled", false);
+            } else {
+                $("#submit-button").prop("disabled", true);
+            }
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+
+$("#favorite-list").ready(function () {
+    loadList();
+})
+
+function loadList() {
+    jQuery.ajax({
+        url: 'Wizard.aspx/GetFavorites',
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        success: function (res) {
+            $("#favorite-list").empty();
+            for (var i = 0; i < res.d.length; i++) {
+                $("#favorite-list").append('<li class="list-group-item"><div class="fa fa-minus-square-o pointer" onclick="removeFavorite(this)"/>\t' + res.d[i].Title + '</li>');
+            }
+            if (res.d.length === 3) {
+                $("#submit-button").prop("disabled", false);
+            } else {
+                $("#submit-button").prop("disabled", true);
+            }
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+
+function removeFavorite(element) {
+    var title = element.parentElement.textContent.trim();
+    jQuery.ajax({
+        url: 'Wizard.aspx/RemoveFavorite',
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify({
+            "title": title
+        }),
+        contentType: "application/json; charset=utf-8",
+        success: function (res) {
+            $("#favorite-list").empty();
+            for (var i = 0; i < res.d.length; i++) {
+                $("#favorite-list").append('<li class="list-group-item"><div onclick="removeFavorite(this)" class="fa fa-minus-square-o pointer" />\t' + res.d[i].Title + '</li>');
+            }
+            if (res.d.length === 3) {
+                $("#submit-button").prop("disabled", false);
+            } else {
+                $("#submit-button").prop("disabled", true);
+            }
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+
+function submitFavorites() {
+    jQuery.ajax({
+        url: 'Wizard.aspx/GetFavorites',
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        success: function (res) {
+            var movie1 = encodeURIComponent(res.d[0].Title);
+            var movie2 = encodeURIComponent(res.d[1].Title);
+            var movie3 = encodeURIComponent(res.d[2].Title);
+
+            var path = '/SimilarMovies.aspx?movie_1=' + movie1 + '&movie_2=' + movie2 + '&movie_3=' + movie3;
+            window.location.href = path;
         },
         error: function (err) {
             console.log(err);
@@ -198,4 +278,8 @@ function getURLParameters(param) {
             return paramName[1];
         }
     }
+}
+
+function showAbout() {
+    window.location.href = "/About.aspx";
 }

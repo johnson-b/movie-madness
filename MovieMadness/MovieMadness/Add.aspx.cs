@@ -24,7 +24,7 @@ namespace MovieMadness
             SqlCommand cmd = movie.Insert(Connection);
             cmd.ExecuteScalar();
             Connection.Close();
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Browse.aspx");
         }
     }
 }

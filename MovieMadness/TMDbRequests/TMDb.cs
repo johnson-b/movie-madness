@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieDbEntities;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -14,6 +15,48 @@ namespace TMDbRequests
         public int Requests { get; set; }
         public readonly int MaxRequests = 40;
 
+        public async Task<List<Movie>> GetMoviesSimilarToFavorites(CancellationToken cancellationToken, string movie1, string movie2, string movie3)
+        {
+            List<Movie> movieResults = new List<Movie>();
+            try
+            {
+                using (var client = new ServiceClient(Properties.Settings.Default.tmdbApiKey))
+                {
+                    var movie = await client.Movies.GetAsync(323, null, true, cancellationToken);
+                    movieResults.Add(movie);
+                    //var movies = await client.Movies.SearchAsync(movie1, "en", true, null, 1, cancellationToken);
+                    //movieResults.AddRange(movies.Results);
+                    //var movie = await client.Movies.GetAsync(movies.Results.FirstOrDefault().Id, "en", true, cancellationToken);
+                    //movies = await client.Movies.GetSimilarAsync(movie.Id, "en", 1, cancellationToken);
+                    //for (int i = 0; i < 5; i++)
+                    //{
+                    //    movieResults.Add(movies.Results.ElementAt(i));
+                    //}
+
+                    //movies = await client.Movies.SearchAsync(movie2, "en", true, null, 1, cancellationToken);
+                    //movie = await client.Movies.GetAsync(movies.Results.FirstOrDefault().Id, "en", true, cancellationToken);
+                    //movies = await client.Movies.GetSimilarAsync(movie.Id, "en", 1, cancellationToken);
+                    //for (int i = 0; i < 5; i++)
+                    //{
+                    //    movieResults.Add(movies.Results.ElementAt(i));
+                    //}
+
+                    //movies = await client.Movies.SearchAsync(movie3, "en", true, null, 1, cancellationToken);
+                    //movie = await client.Movies.GetAsync(movies.Results.FirstOrDefault().Id, "en", true, cancellationToken);
+                    //movies = await client.Movies.GetSimilarAsync(movie.Id, "en", 1, cancellationToken);
+                    //for (int i = 0; i < 5; i++)
+                    //{
+                    //    movieResults.Add(movies.Results.ElementAt(i));
+                    //}
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            return movieResults;
+        }
+
         public async Task<List<Movie>> GetMoviesSimilarTo(CancellationToken cancellationToken, string search)
         {
             List<Movie> movieResults = new List<Movie>();
@@ -22,7 +65,7 @@ namespace TMDbRequests
                 using (var client = new ServiceClient(Properties.Settings.Default.tmdbApiKey))
                 {
                     var movies = await client.Movies.SearchAsync(search, "en", true, null, 1, cancellationToken);
-                    foreach(Movie m in movies.Results)
+                    foreach (Movie m in movies.Results)
                     {
                         var movie = await client.Movies.GetAsync(m.Id, "en", true, cancellationToken);
                         movieResults.Add(movie);

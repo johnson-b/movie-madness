@@ -60,6 +60,7 @@ namespace MovieDbEntities
         public static void UpdateMovie(SqlConnection conn, DbMovie movie)
         {
             conn.Open();
+            movie.Title = movie.Title.Replace("'", "''");
             string update = string.Format("UPDATE {0} SET title='{1}', release_year={2}, duration={3}, rating='{4}' WHERE id={5}",
                 TableName, movie.Title, movie.ReleaseYear, movie.Duration, movie.Rating, movie.Id);
             SqlCommand cmd = new SqlCommand(update, conn);
@@ -73,14 +74,39 @@ namespace MovieDbEntities
             DataSet data = new DataSet();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "getPageOfMovies";
-            cmd.Parameters.AddWithValue("@PageStart", 1);
-            cmd.Parameters.AddWithValue("@MoviesPerPage", 30);
             cmd.CommandType = CommandType.StoredProcedure;
             adapter.SelectCommand = cmd;
             conn.Open();
             adapter.Fill(data);
             conn.Close();
             return data;
+        }
+
+        public static List<DbMovie> GetSimilarMovies(SqlConnection conn, long genreId)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("getSimilarMovies", conn);
+            cmd.Parameters.AddWithValue("@GenreId", genreId);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<DbMovie> movies = new List<DbMovie>();
+            while (reader.Read())
+            {
+                DbMovie movie = new DbMovie();
+                movie.Id = reader.GetInt32(1);
+                movie.Title = reader.GetString(2) as string;
+                movie.ReleaseYear = reader.GetInt32(3);
+                movie.Duration = reader.GetInt32(4);
+                movie.Rating = reader.GetString(5) as string;
+                movie.UserRating = (float)reader.GetDouble(6);
+                movie.UserRatingCount = reader.GetInt32(7);
+                movie.Overview = reader.GetString(8) as string;
+                movie.PosterImageUrl = reader.GetString(9) as string;
+                if (!movies.Contains(movie))
+                    movies.Add(movie);                
+            }
+            conn.Close();
+            return movies;
         }
 
         public static DbMovie GetMovie(SqlConnection conn, string title)
@@ -123,6 +149,7 @@ namespace MovieDbEntities
         public static void Delete(SqlConnection conn, string title)
         {
             conn.Open();
+            title = title.Replace("'", "''");
             string delete = string.Format("DELETE FROM {0} WHERE title='{1}'", TableName, title);
             SqlCommand cmd = new SqlCommand(delete, conn);
             cmd.ExecuteScalar();

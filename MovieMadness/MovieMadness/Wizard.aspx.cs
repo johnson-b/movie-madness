@@ -32,16 +32,40 @@ namespace MovieMadness
         }
 
         [WebMethod]
-        public static void AddMovieToFavorites(string title)
+        public static List<DbMovie> AddMovieToFavorites(string title)
         {
-            if (Favorites.Count != 3)
+            if (Favorites.Count < 3)
             {
-                Favorites.Add(DbMovie.GetMovie(GetSqlConnection(), title));
+                bool inList = false;
+                foreach (DbMovie movie in Favorites)
+                {
+                    if (title == movie.Title)
+                        inList = true;
+                }
+                if (!inList)
+                    Favorites.Add(DbMovie.GetMovie(GetSqlConnection(), title));
             }
-            else
-            {
+            return Favorites;
+        }
 
+        [WebMethod]
+        public static List<DbMovie> GetFavorites()
+        {
+            return Favorites;
+        }
+
+        [WebMethod]
+        public static List<DbMovie> RemoveFavorite(string title)
+        {
+            foreach (DbMovie movie in Favorites)
+            {
+                if (movie.Title == title)
+                {
+                    Favorites.Remove(movie);
+                    return Favorites;
+                }
             }
+            return Favorites;
         }
 
         public static SqlConnection GetSqlConnection()

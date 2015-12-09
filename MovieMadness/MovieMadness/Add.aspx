@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="Add" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Add.aspx.cs" Inherits="MovieMadness.Add" %>
 
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#4f6dff;">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="Default.aspx">Movie Madness</a>
+                <a class="navbar-brand" href="Default.aspx" style="color:white;">Movie Madness</a>
             </div>
         </div>
     </nav>
